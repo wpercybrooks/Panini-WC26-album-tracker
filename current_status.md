@@ -2,7 +2,7 @@
 
 **Date:** May 18, 2026
 **Platform:** Native Android (Kotlin)
-**Status:** Production-Ready MVP (Phase 5 complete)
+**Status:** Production-Ready MVP (Phase 7 complete)
 
 ## 1. Completed Features
 
@@ -27,7 +27,14 @@
 - **Status Filtering:** Chips for "All", "Owned", "Missing", and "Swaps".
 - **Input Method:** "Reveal-on-Touch" +/- buttons for instant increment/decrement, replacing the initial Modal Bottom Sheet for better efficiency.
 
-### 1.3 Visuals & UX
+### 1.3 Statistics Screen (Phase 7)
+- **Global Overview:** Visual progress bar for overall completion and total available swaps count.
+- **Top Repeated:** Displays the top 3 most duplicated stickers.
+- **Nation Progress:** A detailed, list-based breakdown of completion (owned/total) and swap counts per nation.
+- **Sorting:** Ability to sort the nation breakdown alphabetically or by completion percentage.
+- **Data Grouping Fix:** Accurately isolates "Coca-Cola" exclusive stickers into their own statistical group, ensuring standard nation statistics are not artificially inflated.
+
+### 1.4 Visuals & UX
 - **Branding:** FIFA WC 2026 Official Palette (Blue, Purple, Green).
 - **Status Highlighting:**
     - **Missing:** Light gray background, gray text, Red badge, and **subtle red border**.

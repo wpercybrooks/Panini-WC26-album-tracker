@@ -30,6 +30,29 @@ data class NationStat(
     val duplicates: Int
 )
 
+object StatsCalculator {
+    fun computeNationStats(allStickers: List<Sticker>, sortMode: StatsSortMode): List<NationStat> {
+        val groups = allStickers.groupBy { if (it.group == "Coca-Cola") "Coca-Cola" else it.country ?: it.group ?: "Unknown" }
+        val stats = groups.map { (name, stickers) ->
+            NationStat(
+                name = name,
+                owned = stickers.count { it.ncopies > 0 },
+                total = stickers.size,
+                duplicates = stickers.sumOf { if (it.ncopies > 1) it.ncopies - 1 else 0 }
+            )
+        }
+
+        return when (sortMode) {
+            StatsSortMode.NAME -> stats.sortedBy { it.name }
+            StatsSortMode.PERCENTAGE -> stats.sortedWith(
+                compareByDescending<NationStat> { 
+                    if (it.total > 0) (it.owned.toFloat() / it.total) else 0f 
+                }.thenBy { it.name }
+            )
+        }
+    }
+}
+
 class StickerViewModel(application: Application) : AndroidViewModel(application) {
     private val db = AppDatabase.getDatabase(application)
     private val stickerDao = db.stickerDao()
@@ -92,25 +115,7 @@ class StickerViewModel(application: Application) : AndroidViewModel(application)
     }
 
     private fun computeNationStats() {
-        val groups = allStickers.groupBy { it.country ?: it.group ?: "Unknown" }
-        val stats = groups.map { (name, stickers) ->
-            NationStat(
-                name = name,
-                owned = stickers.count { it.ncopies > 0 },
-                total = stickers.size,
-                duplicates = stickers.sumOf { if (it.ncopies > 1) it.ncopies - 1 else 0 }
-            )
-        }
-
-        val sortedStats = when (_statsSortMode.value) {
-            StatsSortMode.NAME -> stats.sortedBy { it.name }
-            StatsSortMode.PERCENTAGE -> stats.sortedWith(
-                compareByDescending<NationStat> { 
-                    if (it.total > 0) (it.owned.toFloat() / it.total) else 0f 
-                }.thenBy { it.name }
-            )
-        }
-        _nationStats.value = sortedStats
+        _nationStats.value = StatsCalculator.computeNationStats(allStickers, _statsSortMode.value)
     }
 
     fun setStatsSortMode(mode: StatsSortMode) {

@@ -47,9 +47,18 @@ class StickerViewModelTest {
     }
 
     @Test
-    fun testProgressCalculation() {
-        // This test requires mocking Room and Application. 
-        // Given the current architecture, an integration test or refactor for DI would be better.
-        // We will focus on verifying the core logic in the plan.
+    fun testCocaColaStickersGrouping() {
+        val stickers = listOf(
+            Sticker("MEX 1", "Ochoa", "Mexico", "Group C", 1),
+            Sticker("CC 1", "Coca Cola 1", "Mexico", "Coca-Cola", 1)
+        )
+        val stats = StatsCalculator.computeNationStats(stickers, StatsSortMode.NAME)
+        assertEquals(2, stats.size)
+        
+        val mexicoStat = stats.find { it.name == "Mexico" }
+        assertEquals(1, mexicoStat?.total)
+        
+        val ccStat = stats.find { it.name == "Coca-Cola" }
+        assertEquals(1, ccStat?.total)
     }
 }
