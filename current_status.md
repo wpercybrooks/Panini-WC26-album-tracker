@@ -43,6 +43,10 @@
 - **OS Compatibility:** Implemented `WindowInsets` padding to prevent navigation bar overlap.
 - **Performance:** Optimized `StickerViewModel` to perform heavy list computations on `Dispatchers.Default`, ensuring 60fps scrolling and responsive interactions.
 
+### 1.5 Build & Distribution
+- **Dynamic APK Naming:** Gradle is configured to automatically name the output APK based on the version name and build type (e.g., `PaniniWC26-v1.0-debug.apk`).
+- **Release Strategy:** Prepared for private direct distribution using debug signing to bypass Play Store requirements for initial sharing.
+
 ## 2. Technical Details
 - **Gradle:** 8.2.1 (Wrapper).
 - **SDK:** Compile SDK 35, Min SDK 24.
@@ -50,4 +54,4 @@
 
 ## 3. Environment Notes
 - **Device:** Samsung (R5CY32GA5JL) - Android 14.
-- **Install Command:** `./gradlew assembleDebug && adb install -r app/build/outputs/apk/debug/app-debug.apk`
+- **Install Command:** `./gradlew clean assembleDebug && adb install -r app/build/outputs/apk/debug/PaniniWC26-v1.0-debug.apk`

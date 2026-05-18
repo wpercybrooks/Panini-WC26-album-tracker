@@ -39,14 +39,16 @@ This project is being developed autonomously by **Gemini CLI**, an interactive A
 To compile the project and generate a debug APK, run the following command from the root directory:
 
 ```bash
-./gradlew assembleDebug
+./gradlew clean assembleDebug
 ```
+
+The generated APK will be automatically named based on the version, for example: `PaniniWC26-v1.0-debug.apk`.
 
 ### Installation
 Ensure your Android device is connected with USB Debugging enabled, or an emulator is running. Install the generated APK using ADB:
 
 ```bash
-adb install -r app/build/outputs/apk/debug/app-debug.apk
+adb install -r app/build/outputs/apk/debug/PaniniWC26-v1.0-debug.apk
 ```
 
 Alternatively, you can open the project in **Android Studio** and click the "Run" button.
