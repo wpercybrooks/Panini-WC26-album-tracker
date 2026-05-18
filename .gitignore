@@ -1,0 +1,19 @@
+# Gradle files
+.gradle/
+build/
+*/build/
+gradle-app.setting
+
+# Local configuration file (contains SDK path)
+local.properties
+
+# IDE files
+.idea/
+*.iml
+*.iws
+
+# System files
+.DS_Store
+
+# Gemini CLI
+.gemini/
