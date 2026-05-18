@@ -5,8 +5,8 @@ The main screen of the application provides a comprehensive list of all 994+ sti
 
 ### 1.1 Data Columns
 Each row in the master list must display:
-*   **Section:** Category name (e.g., "WFC", "Colombia", "Coca-Cola").
-*   **Sticker Code:** The alphanumeric identifier (e.g., "WFC 0", "COL 10").
+*   **Section:** Category name (e.g., "FWC", "Colombia", "Coca-Cola").
+*   **Sticker Code:** The alphanumeric identifier (e.g., "FWC 0", "COL 10").
 *   **Sticker Name:** The person or object name (e.g., "James Rodríguez", "Official Ball").
 *   **ncopies:** Number of copies owned. 
     *   Default: 0.
@@ -14,14 +14,14 @@ Each row in the master list must display:
 
 ### 1.2 Default Sort Order
 The list follows the physical album structure:
-1.  **FIFA Intro + Museum:** All `WFC` stickers (0-19).
+1.  **FIFA Intro + Museum:** All `FWC` stickers (0-19).
 2.  **National Teams:** Groups A through L, in order.
     *   Within each team: Numerical order (1-20).
 3.  **Coca-Cola:** All `CC` stickers (1-14).
 
 ### 1.3 Grouping Functionality (Nested Accordion)
 *   **Hierarchical Behavior:** The list supports two levels of nesting:
-    *   **Level 1: Category/Group** (e.g., "WFC", "Group K", "Coca-Cola").
+    *   **Level 1: Category/Group** (e.g., "FWC", "Group K", "Coca-Cola").
     *   **Level 2: Nation** (e.g., "Colombia" within "Group K").
 *   Users can expand/collapse at either level to manage the long list of stickers.
 *   **Visual Cue:** Use standard chevron icons for expand/collapse states.

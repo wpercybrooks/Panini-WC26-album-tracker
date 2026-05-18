@@ -7,7 +7,8 @@
 ## 1. Completed Features
 
 ### 1.1 Data & Storage
-- **Catalog Ingestion:** `ingest_data.py` script successfully parses `master_list.md` and generates `catalog.db` with 994 stickers.
+- **Catalog Ingestion:** `ingest_data.py` script successfully parses `master_list.md` and generates `catalog.db` with 994 stickers. Recently fixed regex parsing bug to properly handle names containing periods.
+- **Data Integrity:** Completed sweeping data correction pass. Renamed Intro/Museum section code from `WFC` to `FWC` globally. Corrected over 90 player name inaccuracies across multiple teams (NED, BEL, KSA, URU, COD, CZE, CAN, QAT, SCO, CIV, ECU).
 - **Room Database:** Implemented `AppDatabase` with `createFromAsset("catalog.db")` for pre-population. 
 - **Schema Alignment:** `Sticker` entity fully aligned with SQLite schema (handling nullables and non-null Primary Keys).
 - **Data Portability:** 

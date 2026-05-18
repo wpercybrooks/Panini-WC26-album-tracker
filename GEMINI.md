@@ -10,9 +10,9 @@ This document serves as the foundational mandate for the development of the Pani
 
 ## 2. Core Data Reference
 The source of truth for all sticker data is `master_list.md`.
-*   **Total Main Stickers:** 980 (WFC 0-19 + 48 Nations x 20 stickers).
+*   **Total Main Stickers:** 980 (FWC 0-19 + 48 Nations x 20 stickers).
 *   **Total Bonus Stickers:** 14 Coca-Cola Exclusive (CC 1-14).
-*   **Specific Identifiers:** WFC (Intro/Museum), CC (Coca-Cola), and 3-letter country codes (COL, BRA, MEX, etc.).
+*   **Specific Identifiers:** FWC (Intro/Museum), CC (Coca-Cola), and 3-letter country codes (COL, BRA, MEX, etc.).
 
 ## 3. Implementation Mandates
 

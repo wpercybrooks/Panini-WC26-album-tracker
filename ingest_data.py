@@ -8,9 +8,9 @@ def parse_master_list(file_path):
 
     stickers = []
 
-    # Parse WFC
-    wfc_matches = re.findall(r'\| (WFC \d+) \| ([^|]+) \| ([^|]+) \|', content)
-    for code, name, detail in wfc_matches:
+    # Parse FWC
+    fwc_matches = re.findall(r'\| (FWC \d+) \| ([^|]+) \| ([^|]+) \|', content)
+    for code, name, detail in fwc_matches:
         stickers.append({
             'id': code.strip(),
             'name': name.strip(),
@@ -45,7 +45,7 @@ def parse_master_list(file_path):
             # Extract individual stickers
             # Pattern: [CODE] [NUMBER] [NAME]
             # e.g. MEX 1 (Badge), MEX 2 Luis Malagón
-            sticker_matches = re.findall(rf'({nation_code} \d+) ([^,.]+)', nation_stickers_text)
+            sticker_matches = re.findall(rf'({nation_code} \d+) (.*?)(?=\s*,\s*{nation_code}|\s*\.\s*(?:$|\n))', nation_stickers_text)
             for code, name in sticker_matches:
                 stickers.append({
                     'id': code.strip(),

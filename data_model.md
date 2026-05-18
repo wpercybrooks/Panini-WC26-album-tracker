@@ -8,7 +8,7 @@ The core architectural principle is the separation of **Static Data** (the offic
 ## 1. Room Entities
 
 ### 1.1 Section Entity (Static)
-Represents a grouping within the album, such as a specific National Team (e.g., Colombia), the Introductory section (WFC), or Coca-Cola exclusives (CC).
+Represents a grouping within the album, such as a specific National Team (e.g., Colombia), the Introductory section (FWC), or Coca-Cola exclusives (CC).
 
 ```kotlin
 import androidx.room.Entity
@@ -16,7 +16,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "sections")
 data class Section(
-    @PrimaryKey val id: String,          // e.g., "COL", "WFC", "CC"
+    @PrimaryKey val id: String,          // e.g., "COL", "FWC", "CC"
     val name: String,                    // e.g., "Colombia", "Introductory", "Coca-Cola"
     val category: String,                // e.g., "Group K", "Specials", "Host Nations"
     val orderIndex: Int                  // For UI sorting to match physical album pages

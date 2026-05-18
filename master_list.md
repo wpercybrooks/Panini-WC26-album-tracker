@@ -4,29 +4,29 @@ Total Stickers: 980 (Main) + 14 (Coca-Cola)
 
 ---
 
-## Introductory & FIFA Museum (WFC)
+## Introductory & FIFA Museum (FWC)
 | Code | Name | Type / Detail |
 | :--- | :--- | :--- |
-| WFC 0 | Panini Logo | Foil |
-| WFC 1 | Official Emblem (Left) | Foil |
-| WFC 2 | Official Emblem (Right) | Foil |
-| WFC 3 | Official Mascots | Foil |
-| WFC 4 | Official Slogan | Foil |
-| WFC 5 | Official Ball | Foil |
-| WFC 6 | Canada Host Emblem | Foil |
-| WFC 7 | Mexico Host Emblem | Foil |
-| WFC 8 | USA Host Emblem | Foil |
-| WFC 9 | Italy 1934 | Team Photo (Museum) |
-| WFC 10 | Uruguay 1950 | Team Photo (Museum) |
-| WFC 11 | West Germany 1954 | Team Photo (Museum) |
-| WFC 12 | Brazil 1962 | Team Photo (Museum) |
-| WFC 13 | West Germany 1974 | Team Photo (Museum) |
-| WFC 14 | Argentina 1986 | Team Photo (Museum) |
-| WFC 15 | Brazil 1994 | Team Photo (Museum) |
-| WFC 16 | Brazil 2002 | Team Photo (Museum) |
-| WFC 17 | Italy 2006 | Team Photo (Museum) |
-| WFC 18 | Germany 2014 | Team Photo (Museum) |
-| WFC 19 | Argentina 2022 | Team Photo (Museum) |
+| FWC 0 | Panini Logo | Foil |
+| FWC 1 | Official emblem (top) | Foil |
+| FWC 2 | Official emblem (bottom) | Foil |
+| FWC 3 | Official Mascots | Foil |
+| FWC 4 | Official Slogan | Foil |
+| FWC 5 | Official Ball | Foil |
+| FWC 6 | Canada Host Emblem | Foil |
+| FWC 7 | Mexico Host Emblem | Foil |
+| FWC 8 | USA Host Emblem | Foil |
+| FWC 9 | Italy 1934 | Team Photo (Museum) |
+| FWC 10 | Uruguay 1950 | Team Photo (Museum) |
+| FWC 11 | West Germany 1954 | Team Photo (Museum) |
+| FWC 12 | Brazil 1962 | Team Photo (Museum) |
+| FWC 13 | West Germany 1974 | Team Photo (Museum) |
+| FWC 14 | Argentina 1986 | Team Photo (Museum) |
+| FWC 15 | Brazil 1994 | Team Photo (Museum) |
+| FWC 16 | Brazil 2002 | Team Photo (Museum) |
+| FWC 17 | Italy 2006 | Team Photo (Museum) |
+| FWC 18 | Germany 2014 | Team Photo (Museum) |
+| FWC 19 | Argentina 2022 | Team Photo (Museum) |
 
 ---
 
@@ -70,19 +70,19 @@ RSA 1 (Badge), RSA 2 Ronwen Williams, RSA 3 Sipho Chaine, RSA 4 Aubrey Modiba, R
 KOR 1 (Badge), KOR 2 Hyeon-woo Jo, KOR 3 Seung-Gyu Kim, KOR 4 Min-jae Kim, KOR 5 Yu-min Cho, KOR 6 Young-woo Seol, KOR 7 Han-beom Lee, KOR 8 Tae-seok Lee, KOR 9 Myung-jae Lee, KOR 10 Jae-sung Lee, KOR 11 In-beom Hwang, KOR 12 Kang-in Lee, KOR 13 (Team Photo), KOR 14 Seung-ho Paik, KOR 15 Jens Castrop, KOR 16 Dong-gyeong Lee, KOR 17 Gue-sung Cho, KOR 18 Heung-min Son, KOR 19 Hee-chan Hwang, KOR 20 Hyeon-Gyu Oh.
 
 #### Czechia (CZE)
-CZE 1 (Badge), CZE 2 Matej Kovar, CZE 3 Jindrich Stanek, CZE 4 Ladislav Krejci, CZE 5 Vladimir Coufal, CZE 6 Jaroslav Zeleny, CZE 7 Tomas Holes, CZE 8 David Zima, CZE 9 Michal Sadilek, CZE 10 Lukas Provod, CZE 11 Lukas Cerv, CZE 12 Tomas Soucek, CZE 13 (Team Photo), CZE 14 Pavel Sulc, CZE 15 Matej Vydra, CZE 16 Vasil Kusej, CZE 17 Tomas Chory, CZE 18 Adam Hlozek, CZE 19 Patrik Schick, CZE 20 Jan Kuchta.
+CZE 1 (Badge), CZE 2 Matej Kovar, CZE 3 Jindrich Stanek, CZE 4 Ladislav Krejci, CZE 5 Vladimir Coufal, CZE 6 Jaroslav Zeleny, CZE 7 Tomas Holes, CZE 8 David Zima, CZE 9 Michal Sadilek, CZE 10 Lukas Provod, CZE 11 Lukas Cerv, CZE 12 Tomas Soucek, CZE 13 (Team Photo), CZE 14 Pavel Sulc, CZE 15 Matej Vydra, CZE 16 Vasil Kusej, CZE 17 Tomas Chory, CZE 18 Vaclav Cerny, CZE 19 Adam Hlozek, CZE 20 Patrick Schick.
 
 ---
 
 ### Group B
 #### Canada (CAN)
-CAN 1 (Badge), CAN 2 Maxime Crépeau, CAN 3 Dayne St. Clair, CAN 4 Alistair Johnston, CAN 5 Samuel Adekugbe, CAN 6 Richie Laryea, CAN 7 Derek Cornelius, CAN 8 Moïse Bombito, CAN 9 Kamal Miller, CAN 10 Stephen Eustáquio, CAN 11 Ismaël Koné, CAN 12 Jonathan Osorio, CAN 13 (Team Photo), CAN 14 Jacob Shaffelburg, CAN 15 Mathieu Choinière, CAN 16 Niko Sigur, CAN 17 Tajon Buchanan, CAN 18 Liam Millar, CAN 19 Cyle Larin, CAN 20 Jonathan David.
+CAN 1 (Badge), CAN 2 Dayne St.Clair, CAN 3 Alphonso Davies, CAN 4 Alistair Johnston, CAN 5 Samuel Adekugbe, CAN 6 Richie Laryea, CAN 7 Derek Cornelius, CAN 8 Moïse Bombito, CAN 9 Kamal Miller, CAN 10 Stephen Eustáquio, CAN 11 Ismaël Koné, CAN 12 Jonathan Osorio, CAN 13 (Team Photo), CAN 14 Jacob Shaffelburg, CAN 15 Mathieu Choinière, CAN 16 Niko Sigur, CAN 17 Tajon Buchanan, CAN 18 Liam Millar, CAN 19 Cyle Larin, CAN 20 Jonathan David.
 
 #### Bosnia & Herzegovina (BIH)
 BIH 1 (Badge), BIH 2 Nikola Vasilj, BIH 3 Amer Dedic, BIH 4 Sead Kolasinac, BIH 5 Tarik Muharemovic, BIH 6 Nihad Mujakic, BIH 7 Nikola Katic, BIH 8 Amir Hadziahmetovic, BIH 9 Benjamin Tahirovic, BIH 10 Armin Gigovic, BIH 11 Ivan Sunjic, BIH 12 Ivan Basic, BIH 13 (Team Photo), BIH 14 Dzenis Burnic, BIH 15 Esmir Bajraktarevic, BIH 16 Amar Memic, BIH 17 Ermedin Demirovic, BIH 18 Edin Dzeko, BIH 19 Samed Bazdar, BIH 20 Haris Tabakovic.
 
 #### Qatar (QAT)
-QAT 1 (Badge), QAT 2 Meshaal Barsham, QAT 3 Sultan Albrake, QAT 4 Lucas Mendes, QAT 5 Homam Ahmed, QAT 6 Boualem Khoukhi, QAT 7 Pedro Miguel, QAT 8 Tarek Salman, QAT 9 Mohamed Al-Mannai, QAT 10 Karim Boudiaf, QAT 11 Assim Madibo, QAT 12 Ahmed Fatehi, QAT 13 (Team Photo), QAT 14 Mohammed Waad, QAT 15 Abdulaziz Hatem, QAT 16 Hassan Al-Haydos, QAT 17 Edmilson Junior, QAT 18 Akram Hassan Afif, QAT 19 Ahmed Al Ganehi, QAT 20 Almoez Ali.
+QAT 1 (Badge), QAT 2 Meshaal Barsham, QAT 3 Sultan Albrake, QAT 4 Lucas Mendes, QAT 5 Homam Ahmed, QAT 6 Boualem Khoukhi, QAT 7 Pedro Miguel, QAT 8 Tarek Salman, QAT 9 Mohammed Mannai, QAT 10 Karim Boudiaf, QAT 11 Assim Madibo, QAT 12 Ahmed Fatehi, QAT 13 (Team Photo), QAT 14 Mohammed Waad, QAT 15 Abdulaziz Hatem, QAT 16 Hassan Al-Haydos, QAT 17 Edmilson Junior, QAT 18 Akram Hassan Afif, QAT 19 Ahmed Al Ganehi, QAT 20 Almoez Ali.
 
 #### Switzerland (SUI)
 SUI 1 (Badge), SUI 2 Gregor Kobel, SUI 3 Yvon Mvogo, SUI 4 Manuel Akanji, SUI 5 Ricardo Rodriguez, SUI 6 Nico Elvedi, SUI 7 Aurèle Amenda, SUI 8 Silvan Widmer, SUI 9 Granit Xhaka, SUI 10 Denis Zakaria, SUI 11 Remo Freuler, SUI 12 Fabian Rieder, SUI 13 (Team Photo), SUI 14 Ardon Jashari, SUI 15 Johan Manzambi, SUI 16 Michel Aebischer, SUI 17 Breel Embolo, SUI 18 Ruben Vargas, SUI 19 Dan Ndoye, SUI 20 Zeki Amdouni.
@@ -100,7 +100,7 @@ MAR 1 (Badge), MAR 2 Yassine Bounou, MAR 3 Munir El Kajoui, MAR 4 Achraf Hakimi,
 HAI 1 (Badge), HAI 2 Johny Placide, HAI 3 Carlens Arcus, HAI 4 Martin Expérience, HAI 5 Jean-Kevin Duverne, HAI 6 Ricardo Adé, HAI 7 Duke Lacroix, HAI 8 Garven Metusala, HAI 9 Hannes Delcroix, HAI 10 Leverton Pierre, HAI 11 Danley Jean Jacques, HAI 12 Jean-Ricner Bellegarde, HAI 13 (Team Photo), HAI 14 Christopher Attys, HAI 15 Derrick Etienne Jr, HAI 16 Josue Casimir, HAI 17 Ruben Providence, HAI 18 Duckens Nazon, HAI 19 Louicius Deedson, HAI 20 Frantzdy Pierrot.
 
 #### Scotland (SCO)
-SCO 1 (Badge), SCO 2 Angus Gunn, SCO 3 Jack Hendry, SCO 4 Kieran Tierney, SCO 5 Aaron Hickey, SCO 6 Andrew Robertson, SCO 7 Scott McKenna, SCO 8 John Souttar, SCO 9 Anthony Ralston, SCO 10 Grant Hanley, SCO 11 Scott McTominay, SCO 12 Billy Gilmour, SCO 13 (Team Photo), SCO 14 Lewis Ferguson, SCO 15 Ryan Christie, SCO 16 Kenny McLean, SCO 17 John McGinn, SCO 18 Lyndon Dykes, SCO 19 Che Adams, SCO 20 Ben Doak.
+SCO 1 (Badge), SCO 2 Angus Gunn, SCO 3 Jack Hendry, SCO 4 Kieran Tierney, SCO 5 Aaron Hickey, SCO 6 Andrew Robertson, SCO 7 Scott McKenna, SCO 8 John Souttar, SCO 9 Anthony Ralston, SCO 10 Grant Hanley, SCO 11 Scott McTominay, SCO 12 Billy Gilmour, SCO 13 (Team Photo), SCO 14 Lewis Ferguson, SCO 15 Ryan Christie, SCO 16 Kenny McLean, SCO 17 John McGinn, SCO 18 Lyndon Dykes, SCO 19 Che Adams, SCO 20 Ben Gannon-Doak.
 
 ---
 
@@ -127,16 +127,16 @@ GER 1 (Badge), GER 2 Marc-André ter Stegen, GER 3 Jonathan Tah, GER 4 David Rau
 CUR 1 (Badge), CUR 2 Eloy Room, CUR 3 Armando Obispo, CUR 4 Sherel Floranus, CUR 5 Jurien Gaari, CUR 6 Joshua Brenet, CUR 7 Roshon Van Eijma, CUR 8 Shurandy Sambo, CUR 9 Livano Comenencia, CUR 10 Godfried Roemeratoe, CUR 11 Juninho Bacuna, CUR 12 Leandro Bacuna, CUR 13 (Team Photo), CUR 14 Tahith Chong, CUR 15 Kenji Gorre, CUR 16 Jearl Margaritha, CUR 17 Jurgen Locadia, CUR 18 Jeremy Antonisse, CUR 19 Gervane Kastaneer, CUR 20 Sontje Hansen.
 
 #### Ivory Coast (CIV)
-CIV 1 (Badge), CIV 2 Vahia Fofana, CIV 3 Ghislain Konan, CIV 4 Odilon Kossounou, CIV 5 Evan N'Dicka, CIV 6 Wilfried Singo, CIV 7 Willy Boly, CIV 8 Ibrahim Sangaré, CIV 9 Franck Kessié, CIV 10 Nicolas Pépé, CIV 11 Simon Adingra, CIV 12 Oumar Diakité, CIV 13 (Team Photo), CIV 14 Sébastien Haller, CIV 15 Seko Fofana, CIV 16 Jean-Philippe Krasso, CIV 17 Christian Kouamé, CIV 18 Jeremie Boga, CIV 19 Hamari Traoré, CIV 20 Emmanuel Agbadou.
+CIV 1 (Badge), CIV 2 Vahia Fofana, CIV 3 Ghislain Konan, CIV 4 Wilfred Singo, CIV 5 Odilon Kossounou, CIV 6 Evan NDicka, CIV 7 Willy Boly, CIV 8 Emmanuel Agbadou, CIV 9 Ousmane Diomande, CIV 10 Frank Kessié, CIV 11 Seko Fofana, CIV 12 Ibrahim Sangaré, CIV 13 (Team Photo), CIV 14 Jean-Philippe Gbamin, CIV 15 Amad Diallo, CIV 16 Sébastien Haller, CIV 17 Simon Adingra, CIV 18 Yan Diomande, CIV 19 Evann Guessand, CIV 20 Oumar Diakité.
 
 #### Ecuador (ECU)
-ECU 1 (Badge), ECU 2 Hernán Galíndez, ECU 3 Piero Hincapié, ECU 4 Pervis Estupiñán, ECU 5 Willian Pacho, ECU 6 Joel Ordoñez, ECU 7 Alan Franco, ECU 8 Gonzalo Plata, ECU 9 Kevin Rodríguez, ECU 10 Enner Valencia, ECU 11 Moisés Caicedo, ECU 12 Kendry Páez, ECU 13 (Team Photo), ECU 14 Jeremy Sarmiento, ECU 15 Angelo Preciado, ECU 16 Felix Torres, ECU 17 William Pacho, ECU 18 John Yeboah, ECU 19 Jordy Caicedo, ECU 20 Leonardo Campana.
+ECU 1 (Badge), ECU 2 Hernán Galíndez, ECU 3 Gonzalo Valle, ECU 4 Piero Hincapié, ECU 5 Pervis Estupiñán, ECU 6 Willian Pacho, ECU 7 Ángelo Preciado, ECU 8 Joel Ordóñez, ECU 9 Moisés Caiedo, ECU 10 Alan Franco, ECU 11 Kendry Páez, ECU 12 Pedro Vite, ECU 13 (Team Photo), ECU 14 John Yeboah, ECU 15 Leonardo Campana, ECU 16 Gonzalo Plata, ECU 17 Nilson Angulo, ECU 18 Alan Minda, ECU 19 Kevin Rodríguez, ECU 20 Enner Valencia.
 
 ---
 
 ### Group F
 #### Netherlands (NED)
-NED 1 (Badge), NED 2 Bart Verbruggen, NED 3 Nathan Aké, NED 4 Virgil van Dijk, NED 5 Matthijs de Ligt, NED 6 Lutsharel Geertruida, NED 7 Jeremie Frimpong, NED 8 Tijjani Reijnders, NED 9 Joey Veerman, NED 10 Xavi Simons, NED 11 Justin Kluivert, NED 12 Memphis Depay, NED 13 (Team Photo), NED 14 Donyell Malen, NED 15 Wout Weghorst, NED 16 Cody Gakpo, NED 17 Brian Brobbey, NED 18 Joshua Zirkzee, NED 19 Ryan Gravenberch, NED 20 Quinten Timber.
+NED 1 (Badge), NED 2 Bart Verbruggen, NED 3 Virgil van Dijk, NED 4 Micky van de Ven, NED 5 Jurrién Timber, NED 6 Denzel Dumfries, NED 7 Nathan Aké, NED 8 Jeremie Frimpong, NED 9 Jan Paul van Hecke, NED 10 Tijjani Reijnders, NED 11 Ryan Gravenberch, NED 12 Teun Koopmeiners, NED 13 (Team Photo), NED 14 Frenkie de Jong, NED 15 Xavi Simons, NED 16 Justin Kluivert, NED 17 Memphis Depay, NED 18 Donyell Malen, NED 19 Wout Weghorst, NED 20 Cody Gakpo.
 
 #### Japan (JPN)
 JPN 1 (Badge), JPN 2 Zion Suzuki, JPN 3 Henry Heroki Mochizuki, JPN 4 Ayumu Seko, JPN 5 Junnosuke Suzuki, JPN 6 Shogo Taniguchi, JPN 7 Tsuyoshi Watanabe, JPN 8 Kaishu Sano, JPN 9 Yuki Soma, JPN 10 Ao Tanaka, JPN 11 Daichi Kamada, JPN 12 Takefusa Kubo, JPN 13 (Team Photo), JPN 14 Ritsu Doan, JPN 15 Keito Nakamura, JPN 16 Takumi Minamino, JPN 17 Shuto Machino, JPN 18 Junya Ito, JPN 19 Koki Ogawa, JPN 20 Ayase Ueda.
@@ -151,7 +151,7 @@ TUN 1 (Badge), TUN 2 Bechir Ben Said, TUN 3 Aymen Dahmen, TUN 4 Yan Valery, TUN 
 
 ### Group G
 #### Belgium (BEL)
-BEL 1 (Badge), BEL 2 Thibaut Courtois, BEL 3 Arthur Theate, BEL 4 Timothy Castagne, BEL 5 Maxim De Cuyper, BEL 6 Amadou Onana, BEL 7 Youri Tielemans, BEL 8 Kevin De Bruyne, BEL 9 Jérémy Doku, BEL 10 Charles De Ketelaere, BEL 11 Leandro Trossard, BEL 12 Loïs Openda, BEL 13 (Team Photo), BEL 14 Romelu Lukaku, BEL 15 Koen Casteels, BEL 16 Wout Faes, BEL 17 Zeno Debast, BEL 18 Orel Mangala, BEL 19 Johan Bakayoko, BEL 20 Dodi Lukebakio.
+BEL 1 (Badge), BEL 2 Thibaut Courtois, BEL 3 Arthur Theate, BEL 4 Timothy Castagne, BEL 5 Zeno Debast, BEL 6 Brandon Mechele, BEL 7 Maxim de Cuyper, BEL 8 Thomas Meunier, BEL 9 Youri Tielemans, BEL 10 Amadou Onana, BEL 11 Nicolas Raskin, BEL 12 Alexis Saelemaekers, BEL 13 (Team Photo), BEL 14 Hans Vanaken, BEL 15 Kevin de Bruyne, BEL 16 Jeremy Doku, BEL 17 Charles de Ketelaere, BEL 18 Leandro Trossard, BEL 19 Lois Openda, BEL 20 Romelu Lukaku.
 
 #### Egypt (EGY)
 EGY 1 (Badge), EGY 2 Mohamed El Shenawy, EGY 3 Mohamed Hany, EGY 4 Mohamed Hamdy, EGY 5 Yasser Ibrahim, EGY 6 Khaled Sobhi, EGY 7 Ramy Rabia, EGY 8 Hossam Abdelmaguid, EGY 9 Ahmed Fatouh, EGY 10 Marwan Attia, EGY 11 Zizo, EGY 12 Hamdy Fathy, EGY 13 (Team Photo), EGY 14 Mohamed Lasheen, EGY 15 Emam Ashour, EGY 16 Osama Faisal, EGY 17 Mohamed Salah, EGY 18 Mostafa Mohamed, EGY 19 Trezeguet, EGY 20 Omar Marmoush.
@@ -172,10 +172,10 @@ ESP 1 (Badge), ESP 2 Unai Simon, ESP 3 Robin Le Normand, ESP 4 Aymeric Laporte, 
 CPV 1 (Badge), CPV 2 Vozinha, CPV 3 Logan Costa, CPV 4 Pico, CPV 5 Diney, CPV 6 Steven Moreira, CPV 7 Wagner Pina, CPV 8 Joao Paulo, CPV 9 Yannick Semedo, CPV 10 Kevin Pina, CPV 11 Patrick Andrade, CPV 12 Jamiro Monteiro, CPV 13 (Team Photo), CPV 14 Deroy Duarte, CPV 15 Garry Rodrigues, CPV 16 Jovane Cabral, CPV 17 Ryan Mendes, CPV 18 Dailon Livramento, CPV 19 Willy Semedo, CPV 20 Bebe.
 
 #### Saudi Arabia (KSA)
-KSA 1 (Badge), KSA 2 Nawaf Alaqidi, KSA 3 Abdulrahman Al-Sanbi, KSA 4 Saud Abdulhamid, KSA 5 Nawaf Bouwashl, KSA 6 Jihad Thakri, KSA 7 Moteb Al-Harbi, KSA 8 Hassan Altambakti, KSA 9 Musab Aljuwayr, KSA 10 Ziyad Aljohani, KSA 11 Abdullah Alkhaibari, KSA 12 Nasser Aldawsari, KSA 13 (Team Photo), KSA 14 Saleh Abu Alshamat, KSA 15 Marwan Alsahafi, KSA 16 Salem Aldawsari, KSA 17 Abdulrahman Al-Aboud, KSA 18 Feras Akbrikan, KSA 19 Saleh Alshehri, KSA 20 Abdullah Radif.
+KSA 1 (Badge), KSA 2 Nawaf Alaqidi, KSA 3 Abdulrahman Al-Sanbi, KSA 4 Saud Abdulhamid, KSA 5 Nawaf Bouwashl, KSA 6 Jihad Thakri, KSA 7 Moteb Al-Harbi, KSA 8 Hassan Altambakti, KSA 9 Musab Aljuwayr, KSA 10 Ziyad Aljohani, KSA 11 Abdullah Alkhaibari, KSA 12 Nasser Aldawsari, KSA 13 (Team Photo), KSA 14 Saleh Abu Alshamat, KSA 15 Marwan Alsahafi, KSA 16 Salem Aldawsari, KSA 17 Abdulrahman Al-Aboud, KSA 18 Feras Akbrikan, KSA 19 Saleh Alshehri, KSA 20 Abdullah Alhamdan.
 
 #### Uruguay (URU)
-URU 1 (Badge), URU 2 Sergio Rochet, URU 3 Ronald Araújo, URU 4 José María Giménez, URU 5 Mathias Olivera, URU 6 Nahitan Nández, URU 7 Manuel Ugarte, URU 8 Federico Valverde, URU 9 Nicolás de la Cruz, URU 10 Maxi Araujo, URU 11 Darwin Núñez, URU 12 Federico Viñas, URU 13 (Team Photo), URU 14 Rodrigo Aguirre, URU 15 Facundo Pellistri, URU 16 Brian Rodríguez, URU 17 Facundo Torres, URU 18 Luciano Rodríguez, URU 19 Cristian Olivera, URU 20 Luis Suárez.
+URU 1 (Badge), URU 2 Sergio Rochet, URU 3 Santiago Mele, URU 4 Ronald Araújo, URU 5 José María Giménez, URU 6 Sebastián Cáceres, URU 7 Mathías Olivera, URU 8 Guillermo Varela, URU 9 Nahitan Nández, URU 10 Federico Valverde, URU 11 Giorgian de Arrascaeta, URU 12 Rodrigo Betancur, URU 13 (Team Photo), URU 14 Manuel Ugarte, URU 15 Nicolás de la Cruz, URU 16 Maxi Araújo, URU 17 Darwin Núñez, URU 18 Federico Viñas, URU 19 Rodrigo Aguirre, URU 20 Facundo Pellistri.
 
 ---
 
@@ -214,7 +214,7 @@ JOR 1 (Badge), JOR 2 Yazeed Abulaila, JOR 3 Ihsan Haddad, JOR 4 Mohammad Abu Has
 POR 1 (Badge), POR 2 Diogo Costa, POR 3 Jose Sa, POR 4 Ruben Dias, POR 5 João Cancelo, POR 6 Diogo Dalot, POR 7 Nuno Mendes, POR 8 Gonçalo Inácio, POR 9 Bernardo Silva, POR 10 Bruno Fernandes, POR 11 Ruben Neves, POR 12 Vitinha, POR 13 (Team Photo), POR 14 João Neves, POR 15 Cristiano Ronaldo, POR 16 Francisco Trincao, POR 17 João Felix, POR 18 Gonçalo Ramos, POR 19 Pedro Neto, POR 20 Rafael Leão.
 
 #### Congo DR (COD)
-COD 1 (Badge), COD 2 Lionel Mpasi-Nzau, COD 3 Aaron Wan-Bissaka, COD 4 Axel Tuanzebe, COD 5 Arthur Masuaku, COD 6 Chancel Mbemba, COD 7 Joris Kayembe, COD 8 Charles Pickel, COD 9 Ngal'ayel Mukau, COD 10 Edo Kayembe, COD 11 Samuel Moutoussamy, COD 12 Noah Sadiki, COD 13 (Team Photo), COD 14 Théo Bongonda, COD 15 Meschak Elia, COD 16 Yoane Wissa, COD 17 Brian Cipenga, COD 18 Fiston Mayele, COD 19 Cédric Bakambu, COD 20 Simon Banza.
+COD 1 (Badge), COD 2 Lionel Mpasi-Nzau, COD 3 Aaron Wan-Bissaka, COD 4 Axel Tuanzebe, COD 5 Arthur Masuaku, COD 6 Chancel Mbemba, COD 7 Joris Kayembe, COD 8 Charles Pickel, COD 9 Ngal'ayel Mukau, COD 10 Edo Kayembe, COD 11 Samuel Moutoussamy, COD 12 Noah Sadiki, COD 13 (Team Photo), COD 14 Théo Bongonda, COD 15 Meschak Elia, COD 16 Yoane Wissa, COD 17 Brian Cipenga, COD 18 Fiston Mayele, COD 19 Cédric Bakambu, COD 20 Nathanael Mbuku.
 
 #### Uzbekistan (UZB)
 UZB 1 (Badge), UZB 2 Utkir Yusupov, UZB 3 Farrukh Sayfiev, UZB 4 Sherzod Nasrullaev, UZB 5 Umar Eshmurodov, UZB 6 Husniddin Aliqulov, UZB 7 Rustamjon Ashurmatov, UZB 8 Khojiakbar Alijonov, UZB 9 Abdukodir Khusanov, UZB 10 Odiljon Hamrobekov, UZB 11 Otabek Shukurov, UZB 12 Jamshid Iskanderov, UZB 13 (Team Photo), UZB 14 Azizbek Turgunboev, UZB 15 Khojimat Erkinov, UZB 16 Eldor Shomurodov, UZB 17 Oston Urunov, UZB 18 Jaloliddin Masharipov, UZB 19 Igor Sergeev, UZB 20 Abbosbek Fayzullaev.
