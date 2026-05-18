@@ -9,12 +9,16 @@ The app is built using **Kotlin** and leverages the **Room Persistence Library**
 *   **Comprehensive Catalog:** Pre-loaded with the complete list of 994 stickers.
 *   **Nested Accordion UI:** Easily navigate through the extensive catalog using a 3-level hierarchy (Category -> Nation -> Sticker).
 *   **Real-Time Progress Tracking:** A persistent sticky header displays your total collection percentage.
+*   **Collection Statistics:** A dedicated screen providing a deep dive into global completion, swap availability, top repeated stickers, and nation-by-nation progress with sorting capabilities.
 *   **Advanced Search & Filtering:**
     *   Text search by Sticker Code, Name, or Country.
     *   Quick status filters: "All", "Owned", "Missing", and "Swaps".
 *   **Fast Input Method:** Tap on the sticker count to open a Modal Bottom Sheet for quick, numeric entry without the system keyboard.
 *   **Data Portability:** Export your collection progress as a lightweight JSON file and restore it easily using Android's Storage Access Framework (SAF).
 *   **Official Branding:** Adheres to the official FIFA WC 2026 visual identity with distinct states for Missing, Owned, and Duplicated stickers.
+
+## Development Process
+This project is being developed autonomously by **Gemini CLI**, an interactive AI agent. The implementation follows human-provided specifications (see `app_specs.md` and `GEMINI.md`) and adheres to modern Android engineering standards. The agent is responsible for the entire lifecycle: architecture design, implementation, testing, and documentation.
 
 ## File Structure
 *   `app/` - The main Android application module containing Kotlin source code, UI layouts, and resources.

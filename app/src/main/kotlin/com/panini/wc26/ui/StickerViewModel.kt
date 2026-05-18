@@ -19,6 +19,17 @@ enum class FilterStatus {
     ALL, OWNED, MISSING, DUPLICATED
 }
 
+enum class StatsSortMode {
+    NAME, PERCENTAGE
+}
+
+data class NationStat(
+    val name: String,
+    val owned: Int,
+    val total: Int,
+    val duplicates: Int
+)
+
 class StickerViewModel(application: Application) : AndroidViewModel(application) {
     private val db = AppDatabase.getDatabase(application)
     private val stickerDao = db.stickerDao()
@@ -28,6 +39,18 @@ class StickerViewModel(application: Application) : AndroidViewModel(application)
 
     private val _progress = MutableStateFlow(Pair(0, 0))
     val progress: StateFlow<Pair<Int, Int>> = _progress
+
+    private val _totalSwaps = MutableStateFlow(0)
+    val totalSwaps: StateFlow<Int> = _totalSwaps
+
+    private val _topRepeated = MutableStateFlow<List<Sticker>>(emptyList())
+    val topRepeated: StateFlow<List<Sticker>> = _topRepeated
+
+    private val _nationStats = MutableStateFlow<List<NationStat>>(emptyList())
+    val nationStats: StateFlow<List<NationStat>> = _nationStats
+
+    private val _statsSortMode = MutableStateFlow(StatsSortMode.PERCENTAGE)
+    val statsSortMode: StateFlow<StatsSortMode> = _statsSortMode
 
     private val _filterStatus = MutableStateFlow(FilterStatus.ALL)
     val filterStatus: StateFlow<FilterStatus> = _filterStatus
@@ -47,11 +70,52 @@ class StickerViewModel(application: Application) : AndroidViewModel(application)
     private fun loadStickers() {
         viewModelScope.launch {
             allStickers = stickerDao.getAllStickers()
+            
+            // Basic Progress
             val total = allStickers.size
             val owned = allStickers.count { it.ncopies > 0 }
             _progress.value = Pair(owned, total)
+            
+            // Total Swaps
+            _totalSwaps.value = allStickers.sumOf { if (it.ncopies > 1) it.ncopies - 1 else 0 }
+            
+            // Top Repeated
+            _topRepeated.value = allStickers.filter { it.ncopies > 1 }
+                .sortedByDescending { it.ncopies }
+                .take(3)
+                
+            // Nation Stats
+            computeNationStats()
+            
             updateList()
         }
+    }
+
+    private fun computeNationStats() {
+        val groups = allStickers.groupBy { it.country ?: it.group ?: "Unknown" }
+        val stats = groups.map { (name, stickers) ->
+            NationStat(
+                name = name,
+                owned = stickers.count { it.ncopies > 0 },
+                total = stickers.size,
+                duplicates = stickers.sumOf { if (it.ncopies > 1) it.ncopies - 1 else 0 }
+            )
+        }
+
+        val sortedStats = when (_statsSortMode.value) {
+            StatsSortMode.NAME -> stats.sortedBy { it.name }
+            StatsSortMode.PERCENTAGE -> stats.sortedWith(
+                compareByDescending<NationStat> { 
+                    if (it.total > 0) (it.owned.toFloat() / it.total) else 0f 
+                }.thenBy { it.name }
+            )
+        }
+        _nationStats.value = sortedStats
+    }
+
+    fun setStatsSortMode(mode: StatsSortMode) {
+        _statsSortMode.value = mode
+        computeNationStats()
     }
 
     fun exportData(uri: Uri, contentResolver: ContentResolver) {

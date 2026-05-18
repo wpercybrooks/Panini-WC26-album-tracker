@@ -43,6 +43,7 @@ Refer to `app_specs.md` for visual and interaction details.
 4.  **Phase 4: Filtering & Logic:** [COMPLETED] Implemented Status-based filtering, Text Search, and initial modal interaction.
 5.  **Phase 4.5: Data Portability:** [COMPLETED] Implemented JSON-based Export/Import via Storage Access Framework (SAF).
 6.  **Phase 5: Performance & Verification:** [COMPLETED] 60fps scrolling verified (background computation), Room unit tests implemented, and "Reveal-on-Touch" UI finalized.
+7.  **Phase 7: Statistics Screen:** [COMPLETED] Implemented global completion, swap availability, nation-by-nation progress, and navigation via BottomNavigationView.
 
 ## 5. Verification Standards
 *   Every DAO query must have a corresponding unit test.

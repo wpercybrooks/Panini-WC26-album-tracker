@@ -37,11 +37,29 @@ A persistent filter bar at the top allows users to narrow the view:
 
 ---
 
+## 1.5 Statistics View
+A secondary screen accessible via a **Bottom Navigation Bar** that provides a deep dive into the collection's status.
+
+### 1.5.1 Collection Overview
+*   **Global Progress:** Displays the total number of stickers collected out of the album's total (e.g., "752/994") and the overall completion percentage.
+*   **Swap Availability:** Displays the total count of duplicate stickers available for trade.
+*   **Top Repeated Stickers:** Lists the top 3 stickers with the highest number of copies.
+
+### 1.5.2 Progress by Nation
+A sortable list displaying every nation/group (FWC, COL, BRA, Coca-Cola, etc.) with:
+*   **Progress:** Number of stickers owned in that section and percentage.
+*   **Duplicates:** Total number of swaps available for that specific nation.
+*   **Sorting Options:**
+    *   **Percentage (Default):** Descending order (highest completion first).
+    *   **Alphabetical:** A-Z order by nation/group name.
+
+---
+
 ## 2. Technical UI Requirements (Android/Kotlin)
 *   **View Component:** `RecyclerView` with a `ListAdapter` and a custom tree-based data structure to handle nested groups.
 *   **Progress Marker:** A permanent, sticky header or status bar element showing real-time completion (e.g., "752/994 Stickers Collected - 75%").
 *   **Search/Filter:** Use `SearchView` and `ChipGroup` for Status filters.
-*   **Navigation:** Material Design `TopAppBar` with official FIFA WC 2026 branding.
+*   **Navigation:** **BottomNavigationView** for switching between the Master Tracker and the Statistics View.
 
 ## 3. Interaction Design
 *   **ncopies Adjustment (Reveal-on-Touch):** Tapping the `ncopies` circle reveals inline **+/- buttons**. 

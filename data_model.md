@@ -120,6 +120,8 @@ The implementation agent should define `StickerDao` to handle the following core
 4. **Get Missing List:** Query `Sticker` where a matching `UserSticker` either doesn't exist or `isCollected == false`.
 5. **Get Swap List:** Query `StickerWithUserProgress` where `duplicateCount > 0`.
 6. **Overall Statistics:** Aggregate queries to calculate the total percentage of the album completed.
+7. **Nation Statistics:** Logic to group all stickers by nation/category to compute owned, total, and duplicate counts per group.
+8. **Sorting:** Dynamically sort nation statistics by completion percentage (descending) or alphabetically.
 
 ## 4. Initialization Strategy
 The implementation agent should use **Room's `createFromAsset()`** feature. 

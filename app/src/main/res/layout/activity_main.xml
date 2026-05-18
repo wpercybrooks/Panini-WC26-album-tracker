@@ -7,103 +7,126 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <androidx.cardview.widget.CardView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
         <LinearLayout
+            android:id="@+id/collectionContainer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:background="@color/fifa_blue">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/searchView"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/search_bg"
-                android:layout_marginBottom="12dp"
-                app:iconifiedByDefault="false"
-                app:queryHint="Search players or codes..."
-                app:defaultQueryHint="Search players or codes..."
-                app:queryBackground="@android:color/transparent"
-                app:theme="@style/SearchViewTheme" />
+                android:layout_margin="8dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
 
-            <TextView
-                android:id="@+id/progressText"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:background="@color/fifa_blue">
+
+                    <androidx.appcompat.widget.SearchView
+                        android:id="@+id/searchView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/search_bg"
+                        android:layout_marginBottom="12dp"
+                        app:iconifiedByDefault="false"
+                        app:queryHint="Search players or codes..."
+                        app:defaultQueryHint="Search players or codes..."
+                        app:queryBackground="@android:color/transparent"
+                        app:theme="@style/SearchViewTheme" />
+
+                    <TextView
+                        android:id="@+id/progressText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0/994 - 0%"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:progress="0"
+                        android:max="100" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="0/994 - 0%"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:gravity="center" />
+                android:padding="8dp"
+                android:scrollbars="none">
 
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyleHorizontal"
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/filterGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipAll"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="All"
+                        android:checked="true" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipOwned"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Owned" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipMissing"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Missing" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipDuplicated"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Swaps" />
+
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:progress="0"
-                android:max="100" />
+                android:layout_height="match_parent"
+                android:clipToPadding="false" />
 
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
-    <HorizontalScrollView
+        <include layout="@layout/layout_stats" />
+
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:scrollbars="none">
-
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/filterGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:singleSelection="true"
-            app:selectionRequired="true">
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chipAll"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="All"
-                android:checked="true" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chipOwned"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Owned" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chipMissing"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Missing" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chipDuplicated"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Swaps" />
-
-        </com.google.android.material.chip.ChipGroup>
-    </HorizontalScrollView>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false" />
+        app:menu="@menu/bottom_nav_menu" />
 
 </LinearLayout>

@@ -15,8 +15,11 @@ import com.panini.wc26.ui.FilterStatus
 import com.panini.wc26.ui.ListItem
 import com.panini.wc26.ui.StickerAdapter
 import com.panini.wc26.ui.StickerViewModel
+import com.panini.wc26.ui.NationStatAdapter
+import com.panini.wc26.ui.StatsSortMode
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -25,6 +28,7 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
     private val viewModel: StickerViewModel by viewModels()
     private lateinit var adapter: StickerAdapter
+    private lateinit var nationStatAdapter: NationStatAdapter
 
     private val exportLauncher = registerForActivityResult(ActivityResultContracts.CreateDocument("application/json")) { uri ->
         uri?.let { viewModel.exportData(it, contentResolver) }
@@ -47,11 +51,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Collection Views
+        val collectionContainer: View = findViewById(R.id.collectionContainer)
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
         val progressText: TextView = findViewById(R.id.progressText)
         val progressBar: ProgressBar = findViewById(R.id.progressBar)
         val filterGroup: ChipGroup = findViewById(R.id.filterGroup)
         val searchView: androidx.appcompat.widget.SearchView = findViewById(R.id.searchView)
+
+        // Stats Views
+        val statsContainer: View = findViewById(R.id.statsContainer)
+        val statsGlobalProgressText: TextView = findViewById(R.id.statsGlobalProgressText)
+        val statsGlobalProgressBar: ProgressBar = findViewById(R.id.statsGlobalProgressBar)
+        val statsTotalSwapsText: TextView = findViewById(R.id.statsTotalSwapsText)
+        val statsTopRepeatedText: TextView = findViewById(R.id.statsTopRepeatedText)
+        val statsSortGroup: ChipGroup = findViewById(R.id.statsSortGroup)
+        val nationStatsRecyclerView: RecyclerView = findViewById(R.id.nationStatsRecyclerView)
+
+        // Navigation
+        val bottomNavigation: BottomNavigationView = findViewById(R.id.bottomNavigation)
 
         searchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean = false
@@ -71,6 +89,15 @@ class MainActivity : AppCompatActivity() {
             viewModel.setFilterStatus(status)
         }
 
+        statsSortGroup.setOnCheckedStateChangeListener { group, checkedIds ->
+            val mode = when (checkedIds.firstOrNull()) {
+                R.id.chipSortName -> StatsSortMode.NAME
+                else -> StatsSortMode.PERCENTAGE
+            }
+            viewModel.setStatsSortMode(mode)
+        }
+
+        // Setup Collection Adapter
         adapter = StickerAdapter(
             onHeaderClick = { groupName ->
                 viewModel.toggleGroup(groupName)
@@ -82,12 +109,35 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
 
+        // Setup Stats Adapter
+        nationStatAdapter = NationStatAdapter()
+        nationStatsRecyclerView.layoutManager = LinearLayoutManager(this)
+        nationStatsRecyclerView.adapter = nationStatAdapter
+
+        // Bottom Navigation Logic
+        bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_collection -> {
+                    collectionContainer.visibility = View.VISIBLE
+                    statsContainer.visibility = View.GONE
+                    true
+                }
+                R.id.nav_stats -> {
+                    collectionContainer.visibility = View.GONE
+                    statsContainer.visibility = View.VISIBLE
+                    true
+                }
+                else -> false
+            }
+        }
+
         androidx.core.view.ViewCompat.setOnApplyWindowInsetsListener(recyclerView) { v, insets ->
             val systemBars = insets.getInsets(androidx.core.view.WindowInsetsCompat.Type.systemBars())
             v.setPadding(v.paddingLeft, v.paddingTop, v.paddingRight, systemBars.bottom + 16)
             insets
         }
 
+        // Observe ViewModel Flows
         lifecycleScope.launch {
             viewModel.items.collect { items ->
                 adapter.submitList(items)
@@ -97,6 +147,28 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch {
             viewModel.progress.collect { (owned, total) ->
                 updateProgress(owned, total, progressText, progressBar)
+                updateProgress(owned, total, statsGlobalProgressText, statsGlobalProgressBar)
+            }
+        }
+
+        lifecycleScope.launch {
+            viewModel.totalSwaps.collect { total ->
+                statsTotalSwapsText.text = "$total stickers"
+            }
+        }
+
+        lifecycleScope.launch {
+            viewModel.topRepeated.collect { stickers ->
+                val text = stickers.joinToString("\n") { sticker ->
+                    "${sticker.id} (${sticker.ncopies} copies)"
+                }.ifEmpty { "No duplicates yet." }
+                statsTopRepeatedText.text = text
+            }
+        }
+
+        lifecycleScope.launch {
+            viewModel.nationStats.collect { stats ->
+                nationStatAdapter.submitList(stats)
             }
         }
     }
