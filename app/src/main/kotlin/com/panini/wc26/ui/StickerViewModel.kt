@@ -135,69 +135,71 @@ class StickerViewModel(application: Application) : AndroidViewModel(application)
     }
 
     private fun updateList() {
-        val listItems = mutableListOf<ListItem>()
-        
-        val statusFiltered = when (_filterStatus.value) {
-            FilterStatus.ALL -> allStickers
-            FilterStatus.OWNED -> allStickers.filter { it.ncopies > 0 }
-            FilterStatus.MISSING -> allStickers.filter { it.ncopies == 0 }
-            FilterStatus.DUPLICATED -> allStickers.filter { it.ncopies > 1 }
-        }
-
-        val query = _searchQuery.value.lowercase()
-        val filteredStickers = if (query.isEmpty()) {
-            statusFiltered
-        } else {
-            statusFiltered.filter { 
-                it.id.lowercase().contains(query) || 
-                (it.name?.lowercase()?.contains(query) ?: false) ||
-                (it.country?.lowercase()?.contains(query) ?: false)
+        viewModelScope.launch(Dispatchers.Default) {
+            val listItems = mutableListOf<ListItem>()
+            
+            val statusFiltered = when (_filterStatus.value) {
+                FilterStatus.ALL -> allStickers
+                FilterStatus.OWNED -> allStickers.filter { it.ncopies > 0 }
+                FilterStatus.MISSING -> allStickers.filter { it.ncopies == 0 }
+                FilterStatus.DUPLICATED -> allStickers.filter { it.ncopies > 1 }
             }
-        }
 
-        val sortedGroups = filteredStickers.groupBy { it.group ?: "Unknown" }
-            .toList()
-            .sortedBy { (name, _) ->
-                when {
-                    name == "Intro/Museum" -> 0
-                    name.startsWith("Group") -> 1
-                    name == "Coca-Cola" -> 2
-                    else -> 3
+            val query = _searchQuery.value.lowercase()
+            val filteredStickers = if (query.isEmpty()) {
+                statusFiltered
+            } else {
+                statusFiltered.filter { 
+                    it.id.lowercase().contains(query) || 
+                    (it.name?.lowercase()?.contains(query) ?: false) ||
+                    (it.country?.lowercase()?.contains(query) ?: false)
                 }
             }
-        
-        for ((groupName, stickersInGroup) in sortedGroups) {
-            val isExpanded = !toggleStates.contains(groupName)
-            listItems.add(ListItem.Header(groupName, 1, isExpanded, groupName))
+
+            val sortedGroups = filteredStickers.groupBy { it.group ?: "Unknown" }
+                .toList()
+                .sortedBy { (name, _) ->
+                    when {
+                        name == "Intro/Museum" -> 0
+                        name.startsWith("Group") -> 1
+                        name == "Coca-Cola" -> 2
+                        else -> 3
+                    }
+                }
             
-            if (isExpanded) {
-                if (groupName == "Intro/Museum" || groupName == "Coca-Cola") {
-                    // Flatten: Sort by numeric ID directly
-                    val sortedStickers = stickersInGroup.sortedBy { s ->
-                        s.id.split(" ").lastOrNull()?.toIntOrNull() ?: 0
-                    }
-                    for (sticker in sortedStickers) {
-                        listItems.add(ListItem.StickerItem(sticker))
-                    }
-                } else {
-                    val byNation = stickersInGroup.groupBy { it.country ?: "Unknown" }
-                    for ((nationName, stickersInNation) in byNation) {
-                        val nationKey = "$groupName:$nationName"
-                        val isNationExpanded = toggleStates.contains(nationKey)
-                        listItems.add(ListItem.Header(nationName, 2, isNationExpanded, nationKey))
-                        
-                        if (isNationExpanded) {
-                            val sortedStickers = stickersInNation.sortedBy { s ->
-                                s.id.split(" ").lastOrNull()?.toIntOrNull() ?: 0
-                            }
-                            for (sticker in sortedStickers) {
-                                listItems.add(ListItem.StickerItem(sticker))
+            for ((groupName, stickersInGroup) in sortedGroups) {
+                val isExpanded = !toggleStates.contains(groupName)
+                listItems.add(ListItem.Header(groupName, 1, isExpanded, groupName))
+                
+                if (isExpanded) {
+                    if (groupName == "Intro/Museum" || groupName == "Coca-Cola") {
+                        // Flatten: Sort by numeric ID directly
+                        val sortedStickers = stickersInGroup.sortedBy { s ->
+                            s.id.split(" ").lastOrNull()?.toIntOrNull() ?: 0
+                        }
+                        for (sticker in sortedStickers) {
+                            listItems.add(ListItem.StickerItem(sticker))
+                        }
+                    } else {
+                        val byNation = stickersInGroup.groupBy { it.country ?: "Unknown" }
+                        for ((nationName, stickersInNation) in byNation) {
+                            val nationKey = "$groupName:$nationName"
+                            val isNationExpanded = toggleStates.contains(nationKey)
+                            listItems.add(ListItem.Header(nationName, 2, isNationExpanded, nationKey))
+                            
+                            if (isNationExpanded) {
+                                val sortedStickers = stickersInNation.sortedBy { s ->
+                                    s.id.split(" ").lastOrNull()?.toIntOrNull() ?: 0
+                                }
+                                for (sticker in sortedStickers) {
+                                    listItems.add(ListItem.StickerItem(sticker))
+                                }
                             }
                         }
                     }
                 }
             }
+            _items.value = listItems
         }
-        _items.value = listItems
     }
 }

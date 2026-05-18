@@ -44,11 +44,13 @@ A persistent filter bar at the top allows users to narrow the view:
 *   **Navigation:** Material Design `TopAppBar` with official FIFA WC 2026 branding.
 
 ## 3. Interaction Design
-*   **ncopies Adjustment:** Tapping the `ncopies` number triggers a **Pop-up Selector** (Modal Bottom Sheet or Dialog) for quick numeric selection, avoiding the need for the full system keyboard.
-*   **Long Press:** Quickly marks a sticker as "Owned" (sets ncopies to 1).
+*   **ncopies Adjustment (Reveal-on-Touch):** Tapping the `ncopies` circle reveals inline **+/- buttons**. 
+    *   **+ Button:** Increments the count by 1.
+    *   **- Button:** Decrements the count by 1 (minimum 0).
+    *   This provides a fast, one-tap adjustment method without the need for a system keyboard or modal dialog.
 *   **Visual Branding:** Adhere to the official FIFA WC 2026 color palette (Blue, Purple, and Green accents) for a modern, global look.
 *   **Sticker Highlighting:** 
-    *   **Missing:** Slightly dimmed background with a subtle red border.
+    *   **Missing:** Slightly dimmed background with a **subtle red border**.
     *   **Owned:** High contrast text with white/clean background.
 ---
 

@@ -3,6 +3,7 @@ package com.panini.wc26.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -12,7 +13,7 @@ import com.panini.wc26.data.Sticker
 
 class StickerAdapter(
     private val onHeaderClick: (String) -> Unit,
-    private val onStickerClick: (Sticker) -> Unit
+    private val onUpdateCount: (Sticker, Int) -> Unit
 ) : ListAdapter<ListItem, RecyclerView.ViewHolder>(DiffCallback()) {
 
     companion object {
@@ -31,7 +32,7 @@ class StickerAdapter(
         val inflater = LayoutInflater.from(parent.context)
         return when (viewType) {
             TYPE_HEADER -> HeaderViewHolder(inflater.inflate(R.layout.item_header, parent, false), onHeaderClick)
-            TYPE_STICKER -> StickerViewHolder(inflater.inflate(R.layout.item_sticker, parent, false), onStickerClick)
+            TYPE_STICKER -> StickerViewHolder(inflater.inflate(R.layout.item_sticker, parent, false), onUpdateCount)
             else -> throw IllegalArgumentException("Unknown view type")
         }
     }
@@ -57,11 +58,13 @@ class StickerAdapter(
         }
     }
 
-    class StickerViewHolder(view: View, private val onClick: (Sticker) -> Unit) : RecyclerView.ViewHolder(view) {
+    class StickerViewHolder(view: View, private val onUpdateCount: (Sticker, Int) -> Unit) : RecyclerView.ViewHolder(view) {
         private val container: View = view.findViewById(R.id.stickerContainer)
         private val code: TextView = view.findViewById(R.id.stickerCode)
         private val name: TextView = view.findViewById(R.id.stickerName)
         private val ncopies: TextView = view.findViewById(R.id.ncopies)
+        private val btnMinus: ImageButton = view.findViewById(R.id.btnMinus)
+        private val btnPlus: ImageButton = view.findViewById(R.id.btnPlus)
 
         fun bind(item: ListItem.StickerItem) {
             val s = item.sticker
@@ -71,15 +74,30 @@ class StickerAdapter(
             name.text = s.name ?: "Unknown"
             ncopies.text = s.ncopies.toString()
             
-            itemView.setOnClickListener { onClick(s) }
-            
-            val (bgColor, textColor, badgeColor) = when {
-                s.ncopies >= 2 -> Triple(R.color.white, R.color.black, R.color.duplicate_orange)
-                s.ncopies == 1 -> Triple(R.color.white, R.color.black, R.color.fifa_green)
-                else -> Triple(R.color.light_gray, R.color.gray, R.color.missing_red)
+            // Toggle visibility of +/- buttons when touching ncopies
+            ncopies.setOnClickListener {
+                val newVisibility = if (btnPlus.visibility == View.VISIBLE) View.GONE else View.VISIBLE
+                btnMinus.visibility = newVisibility
+                btnPlus.visibility = newVisibility
             }
             
-            container.setBackgroundColor(context.getColor(bgColor))
+            btnMinus.setOnClickListener {
+                if (s.ncopies > 0) {
+                    onUpdateCount(s, s.ncopies - 1)
+                }
+            }
+            
+            btnPlus.setOnClickListener {
+                onUpdateCount(s, s.ncopies + 1)
+            }
+            
+            val (bgDrawable, textColor, badgeColor) = when {
+                s.ncopies >= 2 -> Triple(R.drawable.sticker_bg_owned, R.color.black, R.color.duplicate_orange)
+                s.ncopies == 1 -> Triple(R.drawable.sticker_bg_owned, R.color.black, R.color.fifa_green)
+                else -> Triple(R.drawable.sticker_bg_missing, R.color.gray, R.color.missing_red)
+            }
+            
+            container.setBackgroundResource(bgDrawable)
             code.setTextColor(context.getColor(textColor))
             name.setTextColor(context.getColor(textColor))
             

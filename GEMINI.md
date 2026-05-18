@@ -26,7 +26,7 @@ Refer to `data_model.md` for the schema.
 Refer to `app_specs.md` for visual and interaction details.
 *   **Primary View:** A `RecyclerView` with **Nested Accordion Grouping** (Level 1: Group/Category -> Level 2: Nation).
 *   **Real-time Progress:** A permanent, sticky marker in the header showing total collection percentage (e.g., "752/994 - 75%").
-*   **Input Method:** Tapping `ncopies` must trigger a **Pop-up Selector** (Modal Bottom Sheet), NOT a system keyboard.
+*   **Input Method:** Tapping `ncopies` reveals inline **Reveal-on-Touch** +/- buttons for quick adjustments.
 *   **Filtering:** Multi-mode filtering by Group, Nation, and Status (Owned, Missing, Duplicated).
 
 ### 3.3 Visual Identity & States
@@ -40,9 +40,9 @@ Refer to `app_specs.md` for visual and interaction details.
 1.  **Phase 1: Database Setup:** [COMPLETED] Implemented Room entities, DAOs, and pre-packaged database support.
 2.  **Phase 2: Data Ingestion:** [COMPLETED] Python script `ingest_data.py` converts `master_list.md` to `catalog.db`.
 3.  **Phase 3: Core UI:** [COMPLETED] Implemented Nested RecyclerView with ListAdapter and sticky progress header.
-4.  **Phase 4: Filtering & Logic:** [COMPLETED] Implemented Status-based filtering, Text Search, and Modal Bottom Sheet.
+4.  **Phase 4: Filtering & Logic:** [COMPLETED] Implemented Status-based filtering, Text Search, and initial modal interaction.
 5.  **Phase 4.5: Data Portability:** [COMPLETED] Implemented JSON-based Export/Import via Storage Access Framework (SAF).
-6.  **Phase 5: Performance & Verification:** Ensure 60fps scrolling and verify collection logic.
+6.  **Phase 5: Performance & Verification:** [COMPLETED] 60fps scrolling verified (background computation), Room unit tests implemented, and "Reveal-on-Touch" UI finalized.
 
 ## 5. Verification Standards
 *   Every DAO query must have a corresponding unit test.

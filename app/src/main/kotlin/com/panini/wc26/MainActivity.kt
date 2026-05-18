@@ -17,7 +17,6 @@ import com.panini.wc26.ui.StickerAdapter
 import com.panini.wc26.ui.StickerViewModel
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -76,8 +75,8 @@ class MainActivity : AppCompatActivity() {
             onHeaderClick = { groupName ->
                 viewModel.toggleGroup(groupName)
             },
-            onStickerClick = { sticker ->
-                showNCopiesDialog(sticker)
+            onUpdateCount = { sticker, newCount ->
+                viewModel.updateNCopies(sticker, newCount)
             }
         )
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -119,32 +118,6 @@ class MainActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    private fun showNCopiesDialog(sticker: Sticker) {
-        val dialog = BottomSheetDialog(this)
-        val view = layoutInflater.inflate(R.layout.sheet_ncopies, null)
-        val chipGroup: ChipGroup = view.findViewById(R.id.countChipGroup)
-        val title: TextView = view.findViewById(R.id.sheetTitle)
-        
-        title.text = "Copies of ${sticker.id}"
-        
-        (0..10).forEach { count ->
-            val chip = Chip(this)
-            chip.text = count.toString()
-            chip.isCheckable = true
-            chip.id = View.generateViewId()
-            if (sticker.ncopies == count) chip.isChecked = true
-            
-            chip.setOnClickListener {
-                viewModel.updateNCopies(sticker, count)
-                dialog.dismiss()
-            }
-            chipGroup.addView(chip)
-        }
-        
-        dialog.setContentView(view)
-        dialog.show()
     }
 
     private fun updateProgress(owned: Int, total: Int, text: TextView, bar: ProgressBar) {
