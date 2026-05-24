@@ -42,13 +42,13 @@ To compile the project and generate a debug APK, run the following command from 
 ./gradlew clean assembleDebug
 ```
 
-The generated APK will be automatically named based on the version, for example: `PaniniWC26-v1.0-debug.apk`.
+The generated APK will be automatically named based on the version, for example: `PaniniWC26-v1.0b-debug.apk`.
 
 ### Installation
 Ensure your Android device is connected with USB Debugging enabled, or an emulator is running. Install the generated APK using ADB:
 
 ```bash
-adb install -r app/build/outputs/apk/debug/PaniniWC26-v1.0-debug.apk
+adb install -r app/build/outputs/apk/debug/PaniniWC26-v1.0b-debug.apk
 ```
 
 Alternatively, you can open the project in **Android Studio** and click the "Run" button.

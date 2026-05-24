@@ -157,7 +157,11 @@ class StickerViewModel(application: Application) : AndroidViewModel(application)
                         val importMap = mutableMapOf<String, Int>()
                         for (i in 0 until jsonArray.length()) {
                             val obj = jsonArray.getJSONObject(i)
-                            importMap[obj.getString("id")] = obj.getInt("ncopies")
+                            var id = obj.getString("id")
+                            if (id.startsWith("CUR")) {
+                                id = id.replaceFirst("CUR", "CUW")
+                            }
+                            importMap[id] = obj.getInt("ncopies")
                         }
 
                         val updatedList = allStickers.map { sticker ->

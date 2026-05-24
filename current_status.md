@@ -8,12 +8,12 @@
 
 ### 1.1 Data & Storage
 - **Catalog Ingestion:** `ingest_data.py` script successfully parses `master_list.md` and generates `catalog.db` with 994 stickers. Recently fixed regex parsing bug to properly handle names containing periods.
-- **Data Integrity:** Completed sweeping data correction pass. Renamed Intro/Museum section code from `WFC` to `FWC` globally. Corrected over 90 player name inaccuracies across multiple teams (NED, BEL, KSA, URU, COD, CZE, CAN, QAT, SCO, CIV, ECU).
+- **Data Integrity:** Completed sweeping data correction pass. Renamed Intro/Museum section code from `WFC` to `FWC` globally. Corrected over 90 player name inaccuracies across multiple teams (NED, BEL, KSA, URU, COD, CZE, CAN, QAT, SCO, CIV, ECU). Corrected Curaçao code from `CUR` to `CUW`.
 - **Room Database:** Implemented `AppDatabase` with `createFromAsset("catalog.db")` for pre-population. 
 - **Schema Alignment:** `Sticker` entity fully aligned with SQLite schema (handling nullables and non-null Primary Keys).
 - **Data Portability:** 
     - **Export:** JSON-based backup of owned stickers via SAF.
-    - **Import:** JSON restore with "Overwrite" strategy and confirmation dialog to prevent accidental data loss.
+    - **Import:** JSON restore with "Overwrite" strategy and confirmation dialog to prevent accidental data loss. Includes backward compatibility to map legacy `CUR` sticker IDs to the corrected `CUW` code during import.
 - **Verification:** Implemented `StickerDaoTest` for robust database operation verification.
 
 ### 1.2 User Interface (UI)
@@ -44,7 +44,7 @@
 - **Performance:** Optimized `StickerViewModel` to perform heavy list computations on `Dispatchers.Default`, ensuring 60fps scrolling and responsive interactions.
 
 ### 1.5 Build & Distribution
-- **Dynamic APK Naming:** Gradle is configured to automatically name the output APK based on the version name and build type (e.g., `PaniniWC26-v1.0-debug.apk`).
+- **Dynamic APK Naming:** Gradle is configured to automatically name the output APK based on the version name and build type (e.g., `PaniniWC26-v1.0b-debug.apk`).
 - **Release Strategy:** Prepared for private direct distribution using debug signing to bypass Play Store requirements for initial sharing.
 
 ## 2. Technical Details
@@ -54,4 +54,4 @@
 
 ## 3. Environment Notes
 - **Device:** Samsung (R5CY32GA5JL) - Android 14.
-- **Install Command:** `./gradlew clean assembleDebug && adb install -r app/build/outputs/apk/debug/PaniniWC26-v1.0-debug.apk`
+- **Install Command:** `./gradlew clean assembleDebug && adb install -r app/build/outputs/apk/debug/PaniniWC26-v1.0b-debug.apk`

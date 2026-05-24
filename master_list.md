@@ -123,8 +123,8 @@ TUR 1 (Badge), TUR 2 Ugurcan Cakir, TUR 3 Mert Muldur, TUR 4 Zeki Celik, TUR 5 A
 #### Germany (GER)
 GER 1 (Badge), GER 2 Marc-André ter Stegen, GER 3 Jonathan Tah, GER 4 David Raum, GER 5 Nico Schlotterbeck, GER 6 Antonio Rüdiger, GER 7 Waldemar Anton, GER 8 Ridle Baku, GER 9 Maximilian Mittelstadt, GER 10 Joshua Kimmich, GER 11 Florian Wirtz, GER 12 Felix Nmecha, GER 13 (Team Photo), GER 14 Leon Goretzka, GER 15 Jamal Musiala, GER 16 Serge Gnabry, GER 17 Kai Havertz, GER 18 Leroy Sane, GER 19 Karim Adeyemi, GER 20 Nick Woltemade.
 
-#### Curaçao (CUR)
-CUR 1 (Badge), CUR 2 Eloy Room, CUR 3 Armando Obispo, CUR 4 Sherel Floranus, CUR 5 Jurien Gaari, CUR 6 Joshua Brenet, CUR 7 Roshon Van Eijma, CUR 8 Shurandy Sambo, CUR 9 Livano Comenencia, CUR 10 Godfried Roemeratoe, CUR 11 Juninho Bacuna, CUR 12 Leandro Bacuna, CUR 13 (Team Photo), CUR 14 Tahith Chong, CUR 15 Kenji Gorre, CUR 16 Jearl Margaritha, CUR 17 Jurgen Locadia, CUR 18 Jeremy Antonisse, CUR 19 Gervane Kastaneer, CUR 20 Sontje Hansen.
+#### Curaçao (CUW)
+CUW 1 (Badge), CUW 2 Eloy Room, CUW 3 Armando Obispo, CUW 4 Sherel Floranus, CUW 5 Jurien Gaari, CUW 6 Joshua Brenet, CUW 7 Roshon Van Eijma, CUW 8 Shurandy Sambo, CUW 9 Livano Comenencia, CUW 10 Godfried Roemeratoe, CUW 11 Juninho Bacuna, CUW 12 Leandro Bacuna, CUW 13 (Team Photo), CUW 14 Tahith Chong, CUW 15 Kenji Gorre, CUW 16 Jearl Margaritha, CUW 17 Jurgen Locadia, CUW 18 Jeremy Antonisse, CUW 19 Gervane Kastaneer, CUW 20 Sontje Hansen.
 
 #### Ivory Coast (CIV)
 CIV 1 (Badge), CIV 2 Vahia Fofana, CIV 3 Ghislain Konan, CIV 4 Wilfred Singo, CIV 5 Odilon Kossounou, CIV 6 Evan NDicka, CIV 7 Willy Boly, CIV 8 Emmanuel Agbadou, CIV 9 Ousmane Diomande, CIV 10 Frank Kessié, CIV 11 Seko Fofana, CIV 12 Ibrahim Sangaré, CIV 13 (Team Photo), CIV 14 Jean-Philippe Gbamin, CIV 15 Amad Diallo, CIV 16 Sébastien Haller, CIV 17 Simon Adingra, CIV 18 Yan Diomande, CIV 19 Evann Guessand, CIV 20 Oumar Diakité.
