@@ -252,38 +252,49 @@ class ScannerActivity : AppCompatActivity() {
         AlertDialog.Builder(this)
             .setTitle("Confirm Sticker ID")
             .setView(editText)
-            .setPositiveButton("Add") { _, _ ->
+            .setPositiveButton("Next") { _, _ ->
                 val finalId = editText.text.toString().trim().uppercase()
-                addStickerToCollection(finalId)
+                lifecycleScope.launch {
+                    val db = AppDatabase.getDatabase(application)
+                    val sticker = withContext(Dispatchers.IO) {
+                        db.stickerDao().getStickerById(finalId)
+                    }
+                    if (sticker != null) {
+                        showAddDecisionDialog(sticker)
+                    } else {
+                        Toast.makeText(this@ScannerActivity, "Sticker $finalId not found in catalog", Toast.LENGTH_LONG).show()
+                    }
+                }
             }
             .setNegativeButton("Cancel", null)
             .show()
     }
 
-    private fun addStickerToCollection(id: String) {
+    private fun showAddDecisionDialog(sticker: Sticker) {
+        AlertDialog.Builder(this)
+            .setTitle("Sticker Found")
+            .setMessage("You currently have ${sticker.ncopies} copies of ${sticker.id}.")
+            .setPositiveButton("Add to collection") { _, _ ->
+                incrementStickerCount(sticker)
+            }
+            .setNegativeButton("Dismiss", null)
+            .show()
+    }
+
+    private fun incrementStickerCount(sticker: Sticker) {
         lifecycleScope.launch {
-            Log.d(TAG, "Adding sticker to DB: $id")
+            Log.d(TAG, "Incrementing sticker count: ${sticker.id}")
             val db = AppDatabase.getDatabase(application)
             val stickerDao = db.stickerDao()
             
-            val sticker = withContext(Dispatchers.IO) {
-                stickerDao.getStickerById(id)
+            val updated = sticker.copy(ncopies = sticker.ncopies + 1)
+            withContext(Dispatchers.IO) {
+                stickerDao.insertStickers(listOf(updated))
+                // Verification read
+                val verified = stickerDao.getStickerById(sticker.id)
+                Log.d(TAG, "Verification - ID: ${verified?.id}, new ncopies: ${verified?.ncopies}")
             }
-            
-            if (sticker != null) {
-                Log.d(TAG, "Found sticker: ${sticker.id}, current ncopies: ${sticker.ncopies}")
-                val updated = sticker.copy(ncopies = sticker.ncopies + 1)
-                withContext(Dispatchers.IO) {
-                    stickerDao.insertStickers(listOf(updated))
-                    // Verification read
-                    val verified = stickerDao.getStickerById(id)
-                    Log.d(TAG, "Verification - ID: ${verified?.id}, new ncopies: ${verified?.ncopies}")
-                }
-                Toast.makeText(this@ScannerActivity, "Added $id", Toast.LENGTH_SHORT).show()
-            } else {
-                Log.e(TAG, "Sticker $id not found in DB!")
-                Toast.makeText(this@ScannerActivity, "Sticker $id not found in catalog", Toast.LENGTH_LONG).show()
-            }
+            Toast.makeText(this@ScannerActivity, "Added ${sticker.id}", Toast.LENGTH_SHORT).show()
         }
     }
 

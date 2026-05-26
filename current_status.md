@@ -41,8 +41,8 @@
     - **Prefix Validation:** Validates detected codes against the database (e.g., only accepting COL, BRA, FWC, etc.) to filter out branding noise.
     - **OCR Normalization:** Corrects common OCR errors like "O" instead of "0" and handles variable spacing.
 - **Real-time Feedback:** Implemented a live `ScannerOverlay` that displays green bounding boxes and detected labels on the camera preview.
+- **Confirmation Flow:** Implemented a refined two-step verification process. After the initial ID confirmation ("Next"), the app displays the current owned count for that sticker and requires a final "Add to collection" confirmation, allowing users to dismiss accidental detections.
 - **Reactive UI:** Refactored the data layer to use Room `Flow`, ensuring the main collection list and statistics update instantly when a sticker is scanned.
-- **Confirmation Flow:** Includes a verification dialog allowing users to edit the detected ID before incrementing the collection.
 
 ### 1.5 Visuals & UX
 - **Branding:** FIFA WC 2026 Official Palette (Blue, Purple, Green).
@@ -54,7 +54,7 @@
 - **Performance:** Optimized `StickerViewModel` to perform heavy list computations on `Dispatchers.Default`, ensuring 60fps scrolling and responsive interactions.
 
 ### 1.6 Build & Distribution
-- **Dynamic APK Naming:** Gradle is configured to automatically name the output APK based on the version name and build type (e.g., `PaniniWC26-v1.1-debug.apk`).
+- **Dynamic APK Naming:** Gradle is configured to automatically name the output APK based on the version name and build type (e.g., `PaniniWC26-v1.2-debug.apk`).
 - **Release Strategy:** Prepared for private direct distribution using debug signing to bypass Play Store requirements for initial sharing.
 
 ## 2. Technical Details
@@ -64,4 +64,4 @@
 
 ## 3. Environment Notes
 - **Device:** Samsung (R5CY32GA5JL) - Android 14.
-- **Install Command:** `./gradlew clean assembleDebug && adb install -r app/build/outputs/apk/debug/PaniniWC26-v1.1-debug.apk`
+- **Install Command:** `./gradlew clean assembleDebug && adb install -r app/build/outputs/apk/debug/PaniniWC26-v1.2-debug.apk`
