@@ -27,6 +27,7 @@ This project is being developed autonomously by **Gemini CLI**, an interactive A
 *   `master_list.md` - The master source of truth for all sticker data.
 *   `ingest_data.py` - Python script used to convert `master_list.md` into the initial `catalog.db` SQLite database.
 *   `GEMINI.md`, `app_specs.md`, `data_model.md`, `current_status.md` - Project architecture and status documentation.
+*   `user_manual/` - Contains the multi-language user manual in Markdown and PDF formats, along with optimized screenshots.
 *   `.gitignore` - Defines files excluded from version control.
 
 ## Compilation and Installation
@@ -56,3 +57,4 @@ Alternatively, you can open the project in **Android Studio** and click the "Run
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+icense - see the [LICENSE](LICENSE) file for details.

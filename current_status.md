@@ -53,7 +53,13 @@
 - **OS Compatibility:** Implemented `WindowInsets` padding to prevent navigation bar overlap.
 - **Performance:** Optimized `StickerViewModel` to perform heavy list computations on `Dispatchers.Default`, ensuring 60fps scrolling and responsive interactions.
 
-### 1.6 Build & Distribution
+### 1.6 User Documentation (Phase 9)
+- **Multi-language Manual:** Created comprehensive user guides in both English and Latin American Spanish.
+- **Visual Integration:** Embedded 5 optimized screenshots (500px width) covering the main tracker, input method, CV scanner, statistics, and data management.
+- **UI Alignment:** Specially adapted the Spanish manual to use original English UI text (e.g., "Owned", "Missing", "Export Backup") to prevent confusion with the app's interface.
+- **Formats:** Available in high-fidelity Markdown and PDF formats within the `user_manual/` directory.
+
+### 1.7 Build & Distribution
 - **Dynamic APK Naming:** Gradle is configured to automatically name the output APK based on the version name and build type (e.g., `PaniniWC26-v1.2-debug.apk`).
 - **Release Strategy:** Prepared for private direct distribution using debug signing to bypass Play Store requirements for initial sharing.
 

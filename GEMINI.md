@@ -43,8 +43,9 @@ Refer to `app_specs.md` for visual and interaction details.
 4.  **Phase 4: Filtering & Logic:** [COMPLETED] Implemented Status-based filtering, Text Search, and initial modal interaction.
 5.  **Phase 4.5: Data Portability:** [COMPLETED] Implemented JSON-based Export/Import via Storage Access Framework (SAF).
 6.  **Phase 5: Performance & Verification:** [COMPLETED] 60fps scrolling verified (background computation), Room unit tests implemented, and "Reveal-on-Touch" UI finalized.
-7.  **Phase 7: Statistics Screen:** [COMPLETED] Implemented global completion, swap availability, nation-by-nation progress, and navigation via BottomNavigationView.
-8.  **Phase 8: Offline CV Scanner & Reactive UI:** [COMPLETED] Implemented on-device OCR via ML Kit and CameraX. Refactored data layer to Room `Flow` for real-time reactive UI updates across all screens.
+7.  Phase 7: Statistics Screen: [COMPLETED] Implemented global completion, swap availability, nation-by-nation progress, and navigation via BottomNavigationView.
+8.  Phase 8: Offline CV Scanner & Reactive UI: [COMPLETED] Implemented on-device OCR via ML Kit and CameraX. Refactored data layer to Room `Flow` for real-time reactive UI updates across all screens.
+9.  **Phase 9: User Documentation:** [COMPLETED] Generated multi-language user manuals (ENG/ESP) in MD and PDF formats with integrated visuals and UI alignment.
 
 ## 5. Verification Standards
 *   Every DAO query must have a corresponding unit test.
