@@ -5,6 +5,10 @@
         android:icon="@drawable/ic_list"
         android:title="Collection" />
     <item
+        android:id="@+id/nav_scan"
+        android:icon="@drawable/ic_camera"
+        android:title="Scan" />
+    <item
         android:id="@+id/nav_stats"
         android:icon="@drawable/ic_stats"
         android:title="Statistics" />

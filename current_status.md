@@ -34,7 +34,17 @@
 - **Sorting:** Ability to sort the nation breakdown alphabetically or by completion percentage.
 - **Data Grouping Fix:** Accurately isolates "Coca-Cola" exclusive stickers into their own statistical group, ensuring standard nation statistics are not artificially inflated.
 
-### 1.4 Visuals & UX
+### 1.4 Offline CV Scanner (Phase 8)
+- **Computer Vision:** Integrated Google ML Kit (Bundled Latin Text Recognition) for 100% offline, on-device OCR.
+- **Smart Detection:** 
+    - **Position-Aware:** Prioritizes sticker IDs located in the top-right corner of the sticker back (as per official album layout).
+    - **Prefix Validation:** Validates detected codes against the database (e.g., only accepting COL, BRA, FWC, etc.) to filter out branding noise.
+    - **OCR Normalization:** Corrects common OCR errors like "O" instead of "0" and handles variable spacing.
+- **Real-time Feedback:** Implemented a live `ScannerOverlay` that displays green bounding boxes and detected labels on the camera preview.
+- **Reactive UI:** Refactored the data layer to use Room `Flow`, ensuring the main collection list and statistics update instantly when a sticker is scanned.
+- **Confirmation Flow:** Includes a verification dialog allowing users to edit the detected ID before incrementing the collection.
+
+### 1.5 Visuals & UX
 - **Branding:** FIFA WC 2026 Official Palette (Blue, Purple, Green).
 - **Status Highlighting:**
     - **Missing:** Light gray background, gray text, Red badge, and **subtle red border**.
@@ -43,14 +53,14 @@
 - **OS Compatibility:** Implemented `WindowInsets` padding to prevent navigation bar overlap.
 - **Performance:** Optimized `StickerViewModel` to perform heavy list computations on `Dispatchers.Default`, ensuring 60fps scrolling and responsive interactions.
 
-### 1.5 Build & Distribution
+### 1.6 Build & Distribution
 - **Dynamic APK Naming:** Gradle is configured to automatically name the output APK based on the version name and build type (e.g., `PaniniWC26-v1.0b-debug.apk`).
 - **Release Strategy:** Prepared for private direct distribution using debug signing to bypass Play Store requirements for initial sharing.
 
 ## 2. Technical Details
 - **Gradle:** 8.2.1 (Wrapper).
 - **SDK:** Compile SDK 35, Min SDK 24.
-- **Key Libraries:** Room, Coroutines/Flow, Material Components, Lifecycle KTX, Activity KTX, Room Testing, Coroutines Test.
+- **Key Libraries:** Room, Coroutines/Flow, CameraX, ML Kit (Text Recognition), Material Components, Lifecycle KTX, Activity KTX, Room Testing, Coroutines Test.
 
 ## 3. Environment Notes
 - **Device:** Samsung (R5CY32GA5JL) - Android 14.

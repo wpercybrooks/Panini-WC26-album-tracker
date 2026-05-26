@@ -87,30 +87,32 @@ class StickerViewModel(application: Application) : AndroidViewModel(application)
     init {
         toggleStates.add("Intro/Museum")
         toggleStates.add("Coca-Cola")
-        loadStickers()
+        observeStickers()
     }
 
-    private fun loadStickers() {
+    private fun observeStickers() {
         viewModelScope.launch {
-            allStickers = stickerDao.getAllStickers()
-            
-            // Basic Progress
-            val total = allStickers.size
-            val owned = allStickers.count { it.ncopies > 0 }
-            _progress.value = Pair(owned, total)
-            
-            // Total Swaps
-            _totalSwaps.value = allStickers.sumOf { if (it.ncopies > 1) it.ncopies - 1 else 0 }
-            
-            // Top Repeated
-            _topRepeated.value = allStickers.filter { it.ncopies > 1 }
-                .sortedByDescending { it.ncopies }
-                .take(3)
+            stickerDao.getAllStickersFlow().collect { stickers ->
+                allStickers = stickers
                 
-            // Nation Stats
-            computeNationStats()
-            
-            updateList()
+                // Basic Progress
+                val total = allStickers.size
+                val owned = allStickers.count { it.ncopies > 0 }
+                _progress.value = Pair(owned, total)
+                
+                // Total Swaps
+                _totalSwaps.value = allStickers.sumOf { if (it.ncopies > 1) it.ncopies - 1 else 0 }
+                
+                // Top Repeated
+                _topRepeated.value = allStickers.filter { it.ncopies > 1 }
+                    .sortedByDescending { it.ncopies }
+                    .take(3)
+                    
+                // Nation Stats
+                computeNationStats()
+                
+                updateList()
+            }
         }
     }
 
@@ -170,7 +172,7 @@ class StickerViewModel(application: Application) : AndroidViewModel(application)
 
                         stickerDao.insertStickers(updatedList)
                         withContext(Dispatchers.Main) {
-                            loadStickers()
+                            // observeStickers handles the reload automatically via Flow
                         }
                     }
                 } catch (e: Exception) {
@@ -203,7 +205,7 @@ class StickerViewModel(application: Application) : AndroidViewModel(application)
         viewModelScope.launch {
             val updated = sticker.copy(ncopies = count)
             stickerDao.insertStickers(listOf(updated))
-            loadStickers()
+            // observeStickers handles the reload automatically via Flow
         }
     }
 

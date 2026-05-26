@@ -122,6 +122,10 @@ class MainActivity : AppCompatActivity() {
                     statsContainer.visibility = View.GONE
                     true
                 }
+                R.id.nav_scan -> {
+                    startActivity(android.content.Intent(this, com.panini.wc26.ui.ScannerActivity::class.java))
+                    false
+                }
                 R.id.nav_stats -> {
                     collectionContainer.visibility = View.GONE
                     statsContainer.visibility = View.VISIBLE

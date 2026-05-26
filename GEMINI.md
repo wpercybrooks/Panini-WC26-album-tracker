@@ -44,8 +44,10 @@ Refer to `app_specs.md` for visual and interaction details.
 5.  **Phase 4.5: Data Portability:** [COMPLETED] Implemented JSON-based Export/Import via Storage Access Framework (SAF).
 6.  **Phase 5: Performance & Verification:** [COMPLETED] 60fps scrolling verified (background computation), Room unit tests implemented, and "Reveal-on-Touch" UI finalized.
 7.  **Phase 7: Statistics Screen:** [COMPLETED] Implemented global completion, swap availability, nation-by-nation progress, and navigation via BottomNavigationView.
+8.  **Phase 8: Offline CV Scanner & Reactive UI:** [COMPLETED] Implemented on-device OCR via ML Kit and CameraX. Refactored data layer to Room `Flow` for real-time reactive UI updates across all screens.
 
 ## 5. Verification Standards
 *   Every DAO query must have a corresponding unit test.
 *   The UI must handle the 994+ sticker list without frame drops (60fps) during scrolling and expansion.
 *   Progress calculation must be verified against manual edge cases (0% and 100% completion).
+*   **CV Verification:** Sticker ID extraction must be verified against valid database prefixes and prioritize the top-right corner region.

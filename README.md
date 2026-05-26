@@ -7,6 +7,7 @@ The app is built using **Kotlin** and leverages the **Room Persistence Library**
 
 ## Features
 *   **Comprehensive Catalog:** Pre-loaded with the complete list of 994 stickers.
+*   **Smart CV Scanner:** Use your phone's camera to scan the back of stickers for automatic identification. Features live visual feedback, top-right priority detection, and works 100% offline.
 *   **Nested Accordion UI:** Easily navigate through the extensive catalog using a 3-level hierarchy (Category -> Nation -> Sticker).
 *   **Real-Time Progress Tracking:** A persistent sticky header displays your total collection percentage.
 *   **Collection Statistics:** A dedicated screen providing a deep dive into global completion, swap availability, top repeated stickers, and nation-by-nation progress with sorting capabilities.
