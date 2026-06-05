@@ -3,7 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_export"
-        android:title="Export Backup"
+        android:title="Export Backup (JSON)"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_export_missing_text"
+        android:title="Export Missing (Text)"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_import"

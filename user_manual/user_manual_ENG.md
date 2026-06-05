@@ -104,8 +104,9 @@ Protect your progress by creating backups.
 
 ### 5.1 Exporting Data
 1.  Open the **Options Menu** (three dots) in the top right.
-2.  Select **"Export Backup"**.
-3.  Choose a location on your phone or cloud storage (Google Drive, etc.) to save the `.json` file.
+2.  **Export Backup (JSON):** Save your full progress as a `.json` file for recovery or migration.
+3.  **Export Missing (Text):** Generate a formatted text file listing all your missing stickers (e.g., `COL 5, 17; MEX 6, 18`). Each group is placed on a new line, making it perfect for sharing with trading partners.
+4.  Choose a location on your phone or cloud storage to save the file.
 
 ### 5.2 Importing Data
 1.  Select **"Import Backup"** from the Options Menu.
@@ -117,7 +118,7 @@ Protect your progress by creating backups.
 4.  Confirm the action to restore your collection.
 
 ---
-
+*Generated on June 5, 2026*
 ## 6. Frequently Asked Questions (FAQ)
 
 **Q: The scanner isn't recognizing my sticker. What should I do?**

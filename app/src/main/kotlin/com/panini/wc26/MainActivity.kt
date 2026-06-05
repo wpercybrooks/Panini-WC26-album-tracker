@@ -34,6 +34,10 @@ class MainActivity : AppCompatActivity() {
         uri?.let { viewModel.exportData(it, contentResolver) }
     }
 
+    private val exportMissingLauncher = registerForActivityResult(ActivityResultContracts.CreateDocument("text/plain")) { uri ->
+        uri?.let { viewModel.exportMissingAsText(it, contentResolver) }
+    }
+
     private val importLauncher = registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
         uri?.let { selectedUri ->
             androidx.appcompat.app.AlertDialog.Builder(this)
@@ -186,6 +190,10 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.action_export -> {
                 exportLauncher.launch("panini_backup.json")
+                true
+            }
+            R.id.action_export_missing_text -> {
+                exportMissingLauncher.launch("missing_stickers.txt")
                 true
             }
             R.id.action_import -> {

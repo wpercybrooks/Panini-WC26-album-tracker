@@ -101,13 +101,14 @@ Desliza hacia abajo para ver una lista detallada de cada nación y sección:
 
 ## 5. Gestión de Datos (Backup & Restore)
 Protege tu progreso creando copias de seguridad.
-
 ### 5.1 Exportación de Datos
 1.  Abre el menú de opciones (tres puntos) en la esquina superior derecha.
-2.  Selecciona **"Export Backup"**.
-3.  Elige una ubicación en tu teléfono o en la nube (Google Drive, etc.) para guardar el archivo `.json`.
+2.  **Export Backup (JSON):** Guarda todo tu progreso en un archivo `.json` para recuperación o migración.
+3.  **Export Missing (Text):** Genera un archivo de texto con la lista de tus láminas faltantes (ej. `COL 5, 17; MEX 6, 18`). Cada grupo se coloca en una nueva línea, ideal para compartir con compañeros de intercambio.
+4.  Elige una ubicación en tu teléfono o en la nube para guardar el archivo.
 
-### 5.2 Importación de Datos
+---
+*Generado el 5 de junio de 2026*
 1.  Selecciona **"Import Backup"** en el menú de opciones.
 
 ![Gestión de Datos - Menú de Opciones](images/05.jpg)

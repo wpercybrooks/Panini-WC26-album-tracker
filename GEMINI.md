@@ -46,6 +46,7 @@ Refer to `app_specs.md` for visual and interaction details.
 7.  Phase 7: Statistics Screen: [COMPLETED] Implemented global completion, swap availability, nation-by-nation progress, and navigation via BottomNavigationView.
 8.  Phase 8: Offline CV Scanner & Reactive UI: [COMPLETED] Implemented on-device OCR via ML Kit and CameraX. Refactored data layer to Room `Flow` for real-time reactive UI updates across all screens.
 9.  **Phase 9: User Documentation:** [COMPLETED] Generated multi-language user manuals (ENG/ESP) in MD and PDF formats with integrated visuals and UI alignment.
+10. **Phase 10: Social Export:** [COMPLETED] Implemented plain-text missing stickers export, formatted for easy sharing (one line per country, sorted numerically). Updated version to v1.3.
 
 ## 5. Verification Standards
 *   Every DAO query must have a corresponding unit test.

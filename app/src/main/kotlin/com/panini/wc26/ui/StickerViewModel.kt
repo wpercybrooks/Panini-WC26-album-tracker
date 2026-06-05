@@ -125,6 +125,35 @@ class StickerViewModel(application: Application) : AndroidViewModel(application)
         computeNationStats()
     }
 
+    fun exportMissingAsText(uri: Uri, contentResolver: ContentResolver) {
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                try {
+                    val missingStickers = allStickers.filter { it.ncopies == 0 }
+                    val grouped = missingStickers.groupBy { it.id.split(" ").first() }
+                    
+                    // We want to maintain a logical order for the prefixes if possible
+                    // Let's use the order they appear in the allStickers list
+                    val prefixes = allStickers.map { it.id.split(" ").first() }.distinct()
+                    
+                    val output = prefixes.mapNotNull { prefix ->
+                        val stickers = grouped[prefix] ?: return@mapNotNull null
+                        val numbers = stickers.mapNotNull { it.id.split(" ").lastOrNull()?.toIntOrNull() }
+                            .sorted()
+                        if (numbers.isEmpty()) return@mapNotNull null
+                        "$prefix ${numbers.joinToString(", ")}"
+                    }.joinToString("\n")
+                    
+                    contentResolver.openOutputStream(uri)?.use { outputStream ->
+                        outputStream.write(output.toByteArray())
+                    }
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+        }
+    }
+
     fun exportData(uri: Uri, contentResolver: ContentResolver) {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
